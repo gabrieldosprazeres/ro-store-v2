@@ -12,14 +12,18 @@ export function OAuthButton() {
 
   async function handleDiscordSignIn() {
     setLoading(true)
-    const supabase = createClient()
-    const callbackUrl = new URL('/auth/callback', window.location.origin)
-    if (next) callbackUrl.searchParams.set('next', next)
-    await supabase.auth.signInWithOAuth({
-      provider: 'discord',
-      options: { redirectTo: callbackUrl.toString() },
-    })
-    // Supabase redireciona o browser — não precisa setLoading(false)
+    try {
+      const supabase = createClient()
+      const callbackUrl = new URL('/auth/callback', window.location.origin)
+      if (next) callbackUrl.searchParams.set('next', next)
+      await supabase.auth.signInWithOAuth({
+        provider: 'discord',
+        options: { redirectTo: callbackUrl.toString() },
+      })
+      // Supabase redireciona o browser em caso de sucesso — setLoading não precisa ser chamado
+    } catch {
+      setLoading(false)
+    }
   }
 
   return (

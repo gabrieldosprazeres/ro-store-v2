@@ -25,7 +25,9 @@ import { Separator } from '@/components/ui/separator'
 export function LoginForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
-  const returnUrl = searchParams.get('next') ?? undefined
+  // Validar returnUrl para prevenir open redirect via protocol-relative URLs (//evil.com)
+  const raw = searchParams.get('next')
+  const returnUrl = raw?.startsWith('/') && !raw.startsWith('//') ? raw : undefined
   const [loading, setLoading] = useState(false)
 
   const form = useForm<LoginInput>({
