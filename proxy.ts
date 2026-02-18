@@ -16,6 +16,14 @@ export default async function proxy(request: NextRequest) {
     return supabaseResponse
   }
 
+  // Usuário autenticado tentando acessar rotas de auth → redirecionar para raiz
+  if (
+    user &&
+    (pathname === '/auth/login' || pathname === '/auth/register')
+  ) {
+    return NextResponse.redirect(new URL('/', request.url))
+  }
+
   // Rotas protegidas: /pedidos e /checkout → redirecionar para login se não autenticado
   if (
     !user &&
