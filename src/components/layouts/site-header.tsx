@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase-server'
+import { signOut } from '@/lib/actions/auth-actions'
 import { Button } from '@/components/ui/button'
 
 export async function SiteHeader() {
@@ -24,7 +25,7 @@ export async function SiteHeader() {
               >
                 Meus Pedidos
               </Link>
-              <form action="/auth/signout" method="post">
+              <form action={signOut}>
                 <Button variant="ghost" size="sm" type="submit">
                   Sair
                 </Button>
