@@ -1,7 +1,7 @@
 # Status: ro-store-v2
 ## Fase atual: Execução — Sprint 3 (Catálogo e PDP)
 ## Último agente: QA
-## Branch: feature/sprint-2-autenticacao
+## Branch: main
 
 ### Planejamento ✅ (concluído)
 
@@ -47,8 +47,8 @@
 - Task 3.5: PDP — ProductGallery, YouTubeEmbed, CompatibilityTable, ChangelogAccordion ✅
 - `npm run build` ✅ (/, /produtos/[slug]: Partial Prerender)
 - `npm test` ✅ 33/33 (regressão — testes Sprint 2)
-- Code Review — pendente
-- QA — pendente
+- Code Review: ⚠️ Aprovado com ressalvas → W1 (buildUrl morto) + W2 (select('*')) corrigidos → ✅
+- QA: ✅ Aprovado (58/58 testes | 1 bug corrigido: extractVideoId com /embed/ URLs)
 
 ### Arquivos criados (Sprint 3)
 - `src/app/(store)/page.tsx` — catálogo com filtros por searchParams
@@ -66,4 +66,4 @@
 - `src/lib/utils.ts` — adicionado `getImageUrl`
 
 ### Próximo passo
-Ativar Code Reviewer para Sprint 3.
+Sprint 3 completa ✅. Iniciar Sprint 4 (Checkout e Pagamentos).

@@ -6,6 +6,10 @@ interface YouTubeEmbedProps {
 function extractVideoId(url: string): string | null {
   try {
     const parsed = new URL(url)
+    // https://www.youtube.com/embed/ID — must be checked before the generic youtube.com check
+    if (parsed.pathname.startsWith('/embed/')) {
+      return parsed.pathname.split('/embed/')[1]
+    }
     // https://www.youtube.com/watch?v=ID
     if (parsed.hostname.includes('youtube.com')) {
       return parsed.searchParams.get('v')
@@ -13,10 +17,6 @@ function extractVideoId(url: string): string | null {
     // https://youtu.be/ID
     if (parsed.hostname === 'youtu.be') {
       return parsed.pathname.slice(1)
-    }
-    // https://www.youtube.com/embed/ID
-    if (parsed.pathname.startsWith('/embed/')) {
-      return parsed.pathname.split('/embed/')[1]
     }
   } catch {
     // URL inválida

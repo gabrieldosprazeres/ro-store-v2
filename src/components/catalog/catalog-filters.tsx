@@ -18,22 +18,6 @@ interface CatalogFiltersProps {
   mobile?: boolean
 }
 
-function buildUrl(
-  pathname: string,
-  currentParams: URLSearchParams,
-  key: 'categories' | 'emulators',
-  values: string[]
-): string {
-  const params = new URLSearchParams(currentParams.toString())
-  if (values.length > 0) {
-    params.set(key, values.join(','))
-  } else {
-    params.delete(key)
-  }
-  const qs = params.toString()
-  return qs ? `${pathname}?${qs}` : pathname
-}
-
 interface FilterPanelProps {
   selectedCategories: string[]
   selectedEmulators: string[]

@@ -43,7 +43,7 @@ export default async function PDPPage({ params }: PDPPageProps) {
   const { data: product } = await supabase
     .from('products')
     .select(
-      '*, product_images(id, storage_path, display_order), product_versions(id, version_number, changelog, created_at)'
+      'id, slug, title, price, description, category, emulators, install_type, client_requirements, youtube_url, product_images(id, storage_path, display_order), product_versions(id, version_number, changelog, created_at)'
     )
     .eq('slug', slug)
     .eq('is_published', true)
