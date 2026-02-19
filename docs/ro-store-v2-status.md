@@ -39,14 +39,31 @@
 - QA: ✅ Aprovado (33/33 testes passando)
 - Commits: `feat(auth): ...`, `fix(auth): address code review findings`
 
-### Sprint 3: Catálogo e PDP — em andamento
-- Task 3.1: Server Component do catálogo (`src/app/(store)/page.tsx`) ← próxima
-- Task 3.2: ProductCard, ProductGrid e loading skeleton
-- Task 3.3: CatalogFilters e ActiveFilters (Vaul drawer no mobile)
-- Task 3.4: PDP — Server Component e dados
-- Task 3.5: PDP — ProductGallery e VideoEmbed
+### Sprint 3: Catálogo e PDP — código completo 🔄
+- Task 3.1: Server Component do catálogo (`src/app/(store)/page.tsx`) ✅
+- Task 3.2: ProductCard, ProductGrid e loading skeleton ✅
+- Task 3.3: CatalogFilters e ActiveFilters (Vaul drawer no mobile) ✅
+- Task 3.4: PDP — Server Component e dados ✅
+- Task 3.5: PDP — ProductGallery, YouTubeEmbed, CompatibilityTable, ChangelogAccordion ✅
+- `npm run build` ✅ (/, /produtos/[slug]: Partial Prerender)
+- `npm test` ✅ 33/33 (regressão — testes Sprint 2)
 - Code Review — pendente
 - QA — pendente
 
+### Arquivos criados (Sprint 3)
+- `src/app/(store)/page.tsx` — catálogo com filtros por searchParams
+- `src/app/(store)/loading.tsx` — skeleton do catálogo
+- `src/app/(store)/produtos/[slug]/page.tsx` — PDP com verificação de licença
+- `src/app/(store)/produtos/[slug]/loading.tsx` — skeleton da PDP
+- `src/components/catalog/product-card.tsx`
+- `src/components/catalog/product-grid.tsx`
+- `src/components/catalog/catalog-filters.tsx` — sidebar desktop + Vaul mobile
+- `src/components/catalog/active-filters.tsx`
+- `src/components/product/product-gallery.tsx`
+- `src/components/product/youtube-embed.tsx`
+- `src/components/product/compatibility-table.tsx`
+- `src/components/product/changelog-accordion.tsx`
+- `src/lib/utils.ts` — adicionado `getImageUrl`
+
 ### Próximo passo
-Ativar Next.js agent para Sprint 3 (Catálogo e PDP). Ler backlog tasks 3.1 a 3.5.
+Ativar Code Reviewer para Sprint 3.

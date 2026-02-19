@@ -29,3 +29,8 @@ export function formatDateTime(date: string | Date): string {
     minute: '2-digit',
   }).format(new Date(date))
 }
+
+export function getImageUrl(storagePath: string): string {
+  const base = process.env.NEXT_PUBLIC_SUPABASE_URL ?? ''
+  return `${base}/storage/v1/object/public/product-media/${storagePath}`
+}
