@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { useSearchParams } from 'next/navigation'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { toast } from 'sonner'
@@ -23,8 +22,6 @@ import { OAuthButton } from '@/components/auth/oauth-button'
 import { Separator } from '@/components/ui/separator'
 
 export function RegisterForm() {
-  const searchParams = useSearchParams()
-  const returnUrl = searchParams.get('next') ?? undefined
   const [loading, setLoading] = useState(false)
   const [successMessage, setSuccessMessage] = useState<string | null>(null)
 

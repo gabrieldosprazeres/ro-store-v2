@@ -1,6 +1,6 @@
 # Status: ro-store-v2
-## Fase atual: Execução — Code Review Sprint 2
-## Último agente: Next.js
+## Fase atual: Execução — Sprint 3 (Catálogo e PDP)
+## Último agente: QA
 ## Branch: feature/sprint-2-autenticacao
 
 ### Planejamento ✅ (concluído)
@@ -29,13 +29,18 @@
 - Auth redirects (usuário logado → /) devem estar no proxy.ts, não nas páginas
 
 ### Pendências
-- Task 1.3 (Migration SQL): executar após configurar `.env.local` com credenciais Supabase reais
+- Task 1.3 (Migration SQL): ✅ executada com sucesso em novo projeto Supabase (`tuncvhornxneptnzwpvj`) via `supabase db push`. `database.types.ts` regenerado com tipos reais. Workarounds `as never` removidos.
 - Tremor: instalar na Sprint 6 com `--legacy-peer-deps`
 - Discord OAuth: configurar no Supabase Dashboard (client ID, secret, redirect URI)
 - `NEXT_PUBLIC_SITE_URL` adicionado em `auth-actions.ts` para resetPassword — adicionar ao `.env.example`
 
-### Sprint 3: Catálogo e PDP — pendente
-- Task 3.1: Server Component do catálogo (`src/app/(store)/page.tsx`)
+### Sprint 2: Autenticação — revisões
+- Code Review: ✅ Aprovado (1 blocker + 2 warnings corrigidos, re-review ✅)
+- QA: ✅ Aprovado (33/33 testes passando)
+- Commits: `feat(auth): ...`, `fix(auth): address code review findings`
+
+### Sprint 3: Catálogo e PDP — em andamento
+- Task 3.1: Server Component do catálogo (`src/app/(store)/page.tsx`) ← próxima
 - Task 3.2: ProductCard, ProductGrid e loading skeleton
 - Task 3.3: CatalogFilters e ActiveFilters (Vaul drawer no mobile)
 - Task 3.4: PDP — Server Component e dados
@@ -44,4 +49,4 @@
 - QA — pendente
 
 ### Próximo passo
-Code Review Sprint 2 → QA Sprint 2 → Sprint 3 (Catálogo e PDP)
+Ativar Next.js agent para Sprint 3 (Catálogo e PDP). Ler backlog tasks 3.1 a 3.5.
