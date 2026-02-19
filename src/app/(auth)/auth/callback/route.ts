@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
       action: 'customer_login',
       user_id: data.user.id,
       metadata: { method: 'discord' },
-    } as never)
+    })
   }
 
   // Redirecionar para a URL de retorno (ex: /checkout) ou raiz

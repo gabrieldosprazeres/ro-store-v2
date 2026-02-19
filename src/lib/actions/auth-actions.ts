@@ -38,7 +38,7 @@ export async function signIn(input: LoginInput): Promise<ActionResult> {
         action: 'customer_login',
         user_id: data.user.id,
         metadata: { method: 'email' },
-      } as never)
+      })
     }
 
     return { success: true, data: undefined }
